@@ -12,7 +12,7 @@ if(is_int($an_int)){
     $an_int += 4;
 }
 //is_XX関数(XXは型名)でその型かどうかの真偽値を返す
-//boll型は一般的な言語と同様
+//bool型は一般的な言語と同様
 //int型も同様だがunsignedはない
 echo PHP_INT_MAX;
 echo PHP_INT_MIN;
