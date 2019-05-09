@@ -71,3 +71,16 @@ $numbers = range(1, 5);
 $new_numbers = array_map($double, $numbers);
 print implode(' ', $new_numbers);
 //この関数C++に欲しい
+?>
+<?php
+$foo = "1";//文字列
+$foo *= 2;
+$foo = $foo *1.3;//オペランド(数値)にfloatがあればすべてはfloatとして評価される
+$foo = 5 * "10 apples";//前やった通り=50になる
+var_dump($foo);
+$exe = "あいうえお";
+var_dump($exe);
+$exe1 = (binary) $exe;
+var_dump($exe1);//binaryへのキャストの説明がもっと欲しい
+//stringへのキャスト=ダブルクォーテーションで囲むこと
+
