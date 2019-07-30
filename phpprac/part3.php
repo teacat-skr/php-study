@@ -1,10 +1,10 @@
 <?php
 echo "あかさたな";
 //string型の最大長は2GB
-echo 'Ypu deleted C:\*.*?\n ';
+echo 'You deleted C:\*.*?\n ';
 echo '\\ \'';
 //シングルクオートの場合'及び\以外はエスケープシーケンスを書いても展開されない
-echo "Ypu deleted C:\*.*?<br>\n";
+echo "You deleted C:\*.*?<br>\n";
 
 echo "\\ \" \n<br>";
 ?>
@@ -38,7 +38,7 @@ echo "I have some ${fruit}s".PHP_EOL;
 <?php
 //echo "This is wrong: {$arr[foo][3]}";
 //定数fooを検索し結果未定義の動作をする
-//文字列fooをkyeにしたいならシングルクオートので囲まなければならない'foo'
+//文字列fooをkyeにしたいならシングルクオートで囲まなければならない'foo'
 $fruit = 'apple';
 $apple = 'りんご';
 echo "私は${$fruit}が好き\n";
