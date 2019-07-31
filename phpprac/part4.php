@@ -70,7 +70,7 @@ foreach ($array as $item => $value) {
 print_r($array);
 //配列の全要素のみ削除、配列自体は生存
 $array[] = 6;
-//keyは0ではなく5なる
+//keyは0ではなく5となる
 $array = array_values($array);
 //添え字の振り直し
 $array[] = 7;//keyは1
@@ -98,4 +98,4 @@ var_dump((array) new B());
 $count = count($array);
 echo $count;
 //count関数で要素数を数えられる
-
+//配列の代入はは基本コピーされる

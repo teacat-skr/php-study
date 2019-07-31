@@ -51,7 +51,7 @@ $bar = 'bar';
 $baz = array('foo', 'bar', 'baz', 'quux');
 echo "{$foo->$bar}\n";
 echo "{$foo->{$baz[1]}}\n";
-//"{$foo->${$baz[1]}}\n"じゃないのがもやもやする
+//"{$foo->${$baz[1]}}\n"じゃないのがもやもやする,これに換えても実行可
 ?>
 <?php
 class beers{
