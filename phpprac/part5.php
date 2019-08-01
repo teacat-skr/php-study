@@ -11,7 +11,7 @@ $bar ->do_foo();
 $obj = (object) array('1' => 'foo');
 var_dump(isset($obj->{'1'}));
 var_dump(key($obj));
-//string(1) "1"になる。資料が間違えてる?
+//bool(true) string(1) "1"になる。資料が間違えてる?objectへのキャストをなくすと資料通りになる。
 $obj = (object) 'ciao';
 echo $obj->scalar.PHP_EOL;
 //scalarに格納
