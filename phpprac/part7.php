@@ -164,7 +164,7 @@ var_dump($c instanceof MyInterface);
 $d = 'MyClass';
 var_dump($a instanceof $b);
 var_dump($a instanceof $d);
-//instanseofの後にはクラス名以外にも別なオブジェクトや文字列変数を使用可能
+//instanceofの後にはクラス名以外にも別なオブジェクトや文字列変数を使用可能
 $num = 1;
 var_dump($num instanceof MyClass);
 //確かめる変数がオブジェクトでなくてもエラーにはならずfalseを返す
