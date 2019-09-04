@@ -111,3 +111,60 @@ var_dump(-10 < false);
 //三項演算子は可読性が下がるので入れ子になるべくしない
 $action = $s ?? 1;
 //??(null合体演算子)を使うと$sの部分がnullじゃないなら$sを、nullなら1を代入するような式をかける
+$value = @$cache[$key];
+//@(エラー制御演算子)は上記のように本来keyがなくてエラーが起こるような場合でも無視できる
+//式なら動作する
+$output = `ls -al`;
+echo "<pre>$output</pre>";
+//``(バッククォート)を用いるとその中身をシェルコマンドとして処理する
+?>
+<?php
+//前置インクリメント/デクリメントは加算/減算処理してから値を返す、後置は逆
+$s = 'W';
+for ($i = 0; $i < 6; $i++){
+    echo ++$s.PHP_EOL;
+}
+//文字コードが加算されず、カウント式に増えていく ex)Z -> AA -> AB
+//アルファベット、数字以外の文字列や数値、文字列以外の型はインクリメント/デクリメントしても変化しない
+//nullはデクリメントしても変化しないが、インクリメントすると1になる
+//論理演算子はC++とほぼ同じだが、&&>andのように優先順位が変わる
+$a = 'hello';
+$a .= 'world';
+echo $a.PHP_EOL;
+//文字列結合、C++でいう+=
+//配列どうしは+で結合できる。同じキーがある場合は左にオペランドの要素が優先される
+//また、==で同等なこと、===で同一なこと、!=または<>で等しくないこと、!==で同一でないことが比較できる
+//配列が等しいとは同じキーと値があること。同一とは型、並び順まで同じということ。
+class MyClass {
+
+}
+class NotMyClass {
+
+}
+$a = new MyClass();
+var_dump($a instanceof MyClass);
+var_dump($a instanceof NotMyClass);
+//instanceof クラス名でそのクラスのオブジェクトか判別できる
+class ChildClass extends MyClass{
+
+}
+$b = new ChildClass();
+var_dump($b instanceof ChildClass);
+var_dump($b instanceof MyClass);
+//継承したクラスのオブジェクトのインスタンスかの判断も可能
+interface MyInterface {
+
+}
+class MyClassB implements MyInterface{
+
+}
+$c = new MyClassB();
+var_dump($c instanceof MyInterface);
+//インターフェースを実装したクラスのオブジェクトのインスタンスかも判断可
+$d = 'MyClass';
+var_dump($a instanceof $b);
+var_dump($a instanceof $d);
+//instanseofの後にはクラス名以外にも別なオブジェクトや文字列変数を使用可能
+$num = 1;
+var_dump($num instanceof MyClass);
+//確かめる変数がオブジェクトでなくてもエラーにはならずfalseを返す
