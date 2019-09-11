@@ -118,4 +118,11 @@ for ($i = 0; $i < 10; $i++){
 //webの接続が切れたときに処理落としたりするのに使われるらしい?
 //またdeclare(encoding='ISO-8859-1');でスクリプトのエンコーディングを指定できる
 
-//returnはC言語と同じ
+//returnはC++と同じ
+unregister_tick_function('tick_handler');
+?>
+<?php
+echo PHP_EOL.$fluts;
+include 'vas.php';
+echo $fluts;
+//requireとincludeはどちらも別ファイルを読み込むが前者は致命的なエラーが出て実行が止まる場合があるが後者は止まらない
