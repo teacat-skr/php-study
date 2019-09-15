@@ -124,5 +124,21 @@ unregister_tick_function('tick_handler');
 <?php
 echo PHP_EOL.$fluts;
 include 'vas.php';
-echo $fluts;
+echo $fluts.PHP_EOL;
 //requireとincludeはどちらも別ファイルを読み込むが前者は致命的なエラーが出て実行が止まる場合があるが後者は止まらない
+//includeする前はそのファイルの変数等は使えない
+//includeは成功すればtrueを、失敗すればfalseを返す
+//includeの引数に()は不要
+//include 'http://www.example.com/file.php?foo=1&bar=2';
+//http経由でphpファイルを読み込める。後半のは引数?
+//include_once 'http://www.example.com/file.php?foo=1&bar=2';
+//require_once 'http://www.example.com/file.php?foo=1&bar=2';
+//すでに読み込まれているか確認し、再度読み込まさせたくない場合には上記を使う。動作は確認以外は_onceがないのと同様
+?>
+<?php
+goto end;
+echo 'bar'.PHP_EOL;
+end:
+echo 'Bar'.PHP_EOL;
+//goto文は関数、メソッド内に入ったり出たりすることは不可。また、ループから出ることは可能だが入ることは不可
+
