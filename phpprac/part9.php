@@ -122,5 +122,82 @@ function total_intervals($unit, DateInterval ...$intervals){
 }
 $a = new DateInterval('P1D');
 $b = new DateInterval('P2D');
-echo total_intervals('d', $a, $b).' days';
+echo total_intervals('d', $a, $b).' days'.PHP_EOL;
 //型宣言を用いた可変長配列も使える。そのほか参照渡しも使える
+function return_null(){
+
+}
+var_dump(is_null(return_null()));
+//returnは省略するとnullを返す
+function small_numbers(){
+    return array(0, 1, 2);
+}
+list($zero, $one, $two) = small_numbers();
+echo "$zero $one $two".PHP_EOL;
+//複数の返却値を返したいときは配列を使う
+function &return_reference(){
+    $someref = 1;
+    return $someref;
+}
+$newref =& return_reference();
+var_dump($newref);
+//こうすると関数からリファレンスを返せる
+function sumf($a, $b): float {
+    return $a + $b;
+}
+var_dump(sumf(1, 2));
+//返却値の型宣言もできる。また、declare(strict_types=1);は返却値の型宣言にも引数の型宣言と同様の効果がある
+function getC(): C{
+    return new C();
+}
+var_dump(getC());
+//オブジェクトを返すことも可能
+?>
+<?php
+function fee(){
+    echo "In foo()<br />\n";
+}
+function boo($arg = ''){
+    echo "In boo(); argument was '$arg'.<br />\n";
+}
+function echoit($string){
+    echo $string;
+}
+//echoitはラッパー関数。echo事態はは関数ではないからこうする?
+$func = 'fee';
+$func();
+$func = 'boo';
+$func();
+$func('test');
+//文字列の変数+()で関数が呼び出せる。これを課変数関数という
+class Foo{
+    function  Variable(){
+        $name = 'Bar';
+        $this->$name();
+    }
+    function Bar(){
+        echo "This is Bar.".PHP_EOL;
+    }
+}
+$foo = new Foo();
+$funcname = "Variable";
+$foo->$funcname();
+//オブジェクトのメソッドを可変関数を用いても呼び出せる
+class Bar{
+    static $variable = 'static property'.PHP_EOL;
+    static  function Variable (){
+        echo 'Method Variable called'.PHP_EOL;
+    }
+}
+echo Bar::$variable;
+$variable = "Variable";
+Bar::$variable();
+//静的プロパティ演算子より関数呼び出しが優先される
+$func = array("Foo","bar");
+$func();
+$func = array(new Foo, "bar");
+$func();
+$func = "Foo::bar";
+$func();
+//結果はすべて同じになる
+?>
