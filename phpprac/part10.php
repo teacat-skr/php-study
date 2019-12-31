@@ -75,4 +75,42 @@ $my_cart->add('milk', 3);
 $my_cart->add('eggs', 6);
 
 print $my_cart->getTotal(0.05)."\n";
-//
+//無名関数を使ったクラスの例
+
+class Test {
+    public  function testing(){
+        return function (){
+            var_dump($this);
+        };
+    }
+}
+$object = new Test();
+$function = $object ->testing();
+$function();
+
+class AA {
+    public  function testing(){
+        return function (){
+            var_dump($this);
+        };
+    }
+}
+$object = new AA();
+$function = $object ->testing();
+$function();
+//$thisはクラスをバインドして関数内で使える(的な解釈?)
+class Foo{
+    function  __construct(){
+        $func = static function(){
+            var_dump($this);
+        };
+        $func();
+    }
+};
+new Foo();
+//静的無名関数を使うとバウンドされない?
+$func = static function(){
+
+};
+$func = $func->bindTo(new stdClass());
+//静的無名関数へのオブジェクトのバインドはできない?
