@@ -1,4 +1,5 @@
 <?php
+//型:配列
 $array = array(
     "foo" => "bar",
     "bar" => "foo",
@@ -98,4 +99,4 @@ var_dump((array) new B());
 $count = count($array);
 echo $count;
 //count関数で要素数を数えられる
-//配列の代入はは基本コピーされる
+//配列の代入は基本コピーされる

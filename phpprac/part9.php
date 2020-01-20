@@ -1,4 +1,5 @@
 <?php
+//関数:ユーザー定義関数-内部関数
 declare(strict_types=1);
 $makefoo = true;
 bar();

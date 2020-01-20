@@ -1,4 +1,5 @@
 <?php
+//型:iterable-型の相互変換
 //foreachでたどれることだけが分かればいいときに使える疑似型のIterable型がある
 class foo {
     function do_foo() {

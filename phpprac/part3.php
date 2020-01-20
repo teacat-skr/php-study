@@ -1,4 +1,5 @@
 <?php
+//型:文字列
 echo "あかさたな";
 //string型の最大長は2GB
 echo 'You deleted C:\*.*?\n ';

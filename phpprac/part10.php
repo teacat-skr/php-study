@@ -1,4 +1,5 @@
 <?php
+
 function A ($match){
     return strtoupper($match[1]);
 }

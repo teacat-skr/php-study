@@ -1,4 +1,5 @@
 <?php
+//制御構造:はじめに-goto
 //if文はc言語と同様の使い方
 //else if(elseif)も同様
 $a = 5;
