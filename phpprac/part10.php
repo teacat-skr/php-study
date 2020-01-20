@@ -98,7 +98,7 @@ class AA {
 $object = new AA();
 $function = $object ->testing();
 $function();
-//$thisはクラスをバインドして関数内で使える(的な解釈?)
+//$thisはクラス名をバインドして関数内で使える(的な解釈?)
 class Foo{
     function  __construct(){
         $func = static function(){
@@ -108,7 +108,7 @@ class Foo{
     }
 };
 new Foo();
-//静的無名関数を使うとバウンドされない?
+//静的無名関数を使うとクラス名がバウンドされない?
 $func = static function(){
 
 };
