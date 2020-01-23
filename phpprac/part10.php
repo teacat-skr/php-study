@@ -1,5 +1,5 @@
 <?php
-
+//関数:無名関数
 function A ($match){
     return strtoupper($match[1]);
 }
