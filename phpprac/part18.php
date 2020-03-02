@@ -129,5 +129,40 @@ function fooo(&$var){
     $var =& $GLOBALS["baz"];
 }
 fooo($bar);
-//$barと$bazを結びつけることはできないといいたい?
+//$barと$bazを結びつけることはできないと言いたい?
+function bar(&$var){
+    $var++;
+
+}
+$a = 5;
+bar($a);
+function &bar2(){
+    $a = 5;
+    return $a;
+}
+bar(bar2());
+//6になる
+//関数の呼び出し時に&はつけない
+//変数及び関数から返されるリファレンス以外をリファレンスを引数に取る関数に入れるとエラーになる
+
+class baz{
+    public $value = 42;
+    public function &getValue(){
+        return $this->value;
+    }
+}
+$obj = new baz();
+$myValue = &$obj->getValue(); //&が必要
+$obj->value = 2;
+echo $myValue.PHP_EOL;
+//2に書き換わる
+$a = 1;
+$b = &$a;
+unset($a);
+//$aのリファレンス解除
+
+//globalを使った宣言はグローバル変数へのリファレンスを作成したことと同義
+//$thisもリファレンス
+
+
 
